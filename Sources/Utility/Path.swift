@@ -51,13 +51,17 @@ public struct Path {
 //////MARK: instance members
 
     public let string: String
+    
+    public let components: [String]
 
     public init(components: String...) {
         string = Path.join(components)
+        self.components = components
     }
 
-    public init(_ component: String) {
-        string = component
+    public init(_ path: String) {
+        string = path
+        components = path.components(separatedBy: "/")
     }
     /**
      Returns a string that represents the input relative to another
