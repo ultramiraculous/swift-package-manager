@@ -100,7 +100,6 @@ struct PBXShellScriptBuildPhase: PBXObject {
 typealias GID = String
 
 extension PBXObject {
-    
     var isa: String {
         get {
             return String(self.dynamicType)
@@ -112,17 +111,6 @@ extension PBXObject {
             return "\(isa.hash)\(isa.hash)\(isa.hash)"
         }
     }
-    
-    func printOut() {
-        let mirror = Mirror(reflecting: self)
-        
-        for attr in mirror.children {
-            print(attr.label)
-            print(attr.value)
-        }
-        
-    }
-    
 }
 
 
